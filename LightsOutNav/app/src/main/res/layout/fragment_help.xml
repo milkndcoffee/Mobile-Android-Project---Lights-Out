@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="25dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context="com.zybooks.lightsout.Controller.HelpActivity">
+
+        <TextView
+            android:id="@+id/instructionsTextView"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/help_instructions"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <ImageView
+            android:id="@+id/lightBulbImage"
+            android:layout_marginVertical="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="100dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:src="@drawable/light_bulb"
+            android:contentDescription="@string/light_bulb"
+            app:layout_constraintTop_toBottomOf="@id/instructionsTextView"
+            app:layout_constraintLeft_toLeftOf="@id/instructionsTextView"
+            app:layout_constraintRight_toRightOf="@id/instructionsTextView" />
+
+        <!-- DIVIDER -->
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerInsetStart="16dp"
+            app:dividerInsetEnd="16dp"
+            app:dividerColor ="@color/white"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/lightBulbImage"
+            app:layout_constraintLeft_toLeftOf="@id/lightBulbImage"
+            app:layout_constraintRight_toRightOf="@id/lightBulbImage"/>
+
+        <!-- [Saving Energy] Section -->
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Here to learn about saving energy?"
+            app:layout_constraintTop_toTopOf="@id/materialDivider"
+            app:layout_constraintLeft_toLeftOf="@id/materialDivider"
+            app:layout_constraintRight_toRightOf="@id/materialDivider" />
+        <TextView
+            android:id="@+id/underHeaderTextView"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Check out Energy.gov!"
+            app:layout_constraintTop_toTopOf="@id/headerTextView"
+            app:layout_constraintLeft_toLeftOf="@id/headerTextView"
+            app:layout_constraintRight_toRightOf="@id/headerTextView" />
+        <Button
+            android:id="@+id/activityCallButton"
+            style="@style/GameOptionButton"
+            android:layout_marginTop="15dp"
+            android:text="Call"
+            android:onClick="onActivityCallClick"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/underHeaderTextView"
+            app:layout_constraintRight_toRightOf="@id/underHeaderTextView"
+            app:layout_constraintTop_toBottomOf="@id/underHeaderTextView" />
+        <Button
+            android:id="@+id/activityMapButton"
+            style="@style/GameOptionButton"
+            android:text="Directions"
+            android:onClick="onActivityMapClick"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/activityCallButton"
+            app:layout_constraintRight_toRightOf="@id/activityCallButton"
+            app:layout_constraintTop_toBottomOf="@id/activityCallButton" />
+
+        <!-- DIVIDER -->
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerInsetStart="16dp"
+            app:dividerInsetEnd="16dp"
+            app:dividerColor ="@color/white"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/activityMapButton"
+            app:layout_constraintLeft_toLeftOf="@id/activityMapButton"
+            app:layout_constraintRight_toRightOf="@id/activityMapButton"/>
+
+        <!-- Other Apps -->
+        <TextView
+            android:id="@+id/headerTextView2"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Other Apps"
+            app:layout_constraintTop_toTopOf="@id/materialDivider2"
+            app:layout_constraintLeft_toLeftOf="@id/materialDivider2"
+            app:layout_constraintRight_toRightOf="@id/materialDivider2" />
+        <TextView
+            android:id="@+id/underHeaderTextView2"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Customized or created by yours truly"
+            app:layout_constraintTop_toTopOf="@id/headerTextView2"
+            app:layout_constraintLeft_toLeftOf="@id/headerTextView2"
+            app:layout_constraintRight_toRightOf="@id/headerTextView2" />
+        <Button
+            android:id="@+id/activityAppButton"
+            style="@style/GameOptionButton"
+            android:layout_marginTop="15dp"
+            android:text="Dice Roll"
+            android:onClick="onActivityAppClick"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/underHeaderTextView2"
+            app:layout_constraintRight_toRightOf="@id/underHeaderTextView2"
+            app:layout_constraintTop_toBottomOf="@id/underHeaderTextView2" />
+        <Button
+            android:id="@+id/activityAppButton2"
+            style="@style/GameOptionButton"
+            android:text="St4r W4rs 4pp"
+            android:onClick="onActivityApp2Click"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/activityAppButton"
+            app:layout_constraintRight_toRightOf="@id/activityAppButton"
+            app:layout_constraintTop_toBottomOf="@id/activityAppButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
